@@ -9,7 +9,7 @@ const setupInput = function(conn) {
   stdin.resume();
   stdin.on('data', handleUserInput);
   return stdin;
-}
+};
 
 const handleUserInput = function(key) {
   if (key === '\u0003') {
@@ -22,7 +22,9 @@ const handleUserInput = function(key) {
     connection.write("Move: down");
   } else if (key === 'd') {
     connection.write("Move: right");
+  } else if (key === 'f') {
+    connection.write("Say: I am a snake");
   }
-}
+};
 
 module.exports = { setupInput };
